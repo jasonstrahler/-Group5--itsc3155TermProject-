@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'user/user'
   get 'classroom/classroom'
   get 'student/student'
