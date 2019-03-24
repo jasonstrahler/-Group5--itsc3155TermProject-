@@ -16,6 +16,9 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
+# registration and login
+gem 'devise'
+
 # Required file for bootstrap
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 # Use Bootstrap to assist with SCSS
