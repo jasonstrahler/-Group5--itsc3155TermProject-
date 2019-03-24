@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'classroom/classroom'
   get 'student/student'
   get 'login/login'
+  get 'login/classroom'
   
   resources :users
   resources :classrooms
