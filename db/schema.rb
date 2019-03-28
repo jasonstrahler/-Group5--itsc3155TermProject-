@@ -10,7 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_24_052544) do
+ActiveRecord::Schema.define(version: 2019_03_28_083223) do
+
+  create_table "classrooms", force: :cascade do |t|
+    t.string "ClassName"
+    t.string "ProfessorName"
+    t.string "ClassDepartment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sections", force: :cascade do |t|
+    t.string "sectionCode"
+    t.integer "classroom_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["classroom_id"], name: "index_sections_on_classroom_id"
+  end
+
+  create_table "user_infos", force: :cascade do |t|
+    t.integer "grade"
+    t.integer "classroom_id"
+    t.integer "section_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["classroom_id"], name: "index_user_infos_on_classroom_id"
+    t.index ["section_id"], name: "index_user_infos_on_section_id"
+    t.index ["user_id"], name: "index_user_infos_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
