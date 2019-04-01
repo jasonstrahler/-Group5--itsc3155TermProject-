@@ -1,3 +1,20 @@
+<table>   
+    <tr>     
+        <th>Class Name |</th>     
+        <th> Professor Name |</th>   
+        <th> Class Department |</th>
+        <th> Select</th>
+    </tr>    
+    <% @classrooms.each do |c| %>   
+        <tr>       
+            <td><%= c.ClassName %></td>   
+            <td><%= c.ProfessorName %></td>   
+            <td><%= c.ClassDepartment %></td>    
+            <td><%= link_to 'Select', classroom_path(c) %></td>
+            </tr>   
+    <% end %> 
+</table>
+
 <HTML>
 	<head>
 	</head>

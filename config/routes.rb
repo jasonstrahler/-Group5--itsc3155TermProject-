@@ -2,11 +2,8 @@ Rails.application.routes.draw do
   get 'sections/index'
   get 'students/index'
   devise_for :users
-  get 'user/user'
-  get 'classroom/classroom'
-  get 'student/student'
-  get 'login/login'
-  get 'login/classroom'
+  get 'classrooms/index'
+  get 'students/index'
   
 
   resources :classrooms
@@ -17,7 +14,7 @@ Rails.application.routes.draw do
 
     
     authenticated :user do
-      root 'classroom#classroom', as: :authenticated_root
+      root 'classrooms#index', as: :authenticated_root
     end
   
     unauthenticated do
