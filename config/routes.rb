@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'login/login'
   get 'login/classroom'
   
-  resources :users
+
   resources :classrooms
   resources :students
   
