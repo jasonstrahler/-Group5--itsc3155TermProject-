@@ -12,7 +12,6 @@ Rails.application.routes.draw do
 
   devise_scope :user do
 
-    
     authenticated :user do
       root 'classrooms#index', as: :authenticated_root
     end

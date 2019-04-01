@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+h2 {
+    display: block;
+}
+.actions{
+    text-align: center;
+    color: #ffffff;
+    padding: 12px 12px;
+}
+
+.slinks {
+    text-align: center;
+    color: #ffffff;
+}
+
+
+a:link{
+    color: #ffffff;
+}
+
+a:visited{
+    color: #b7b7b7;
+}
+
+a:hover{
+    color: #dddddd;    
+}
+
+a:active{
+    color: #dddddd;    
+}
