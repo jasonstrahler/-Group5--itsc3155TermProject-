@@ -27,6 +27,21 @@ h2 {
     color: #ffffff;
 }
 
+p{
+    color: #ffffff;
+}
+
+tr {
+    color: #ffffff;
+}
+
+td {
+    color: #ffffff;    
+}
+
+.output {
+    color: #ffffff;    
+}
 
 a:link{
     color: #ffffff;

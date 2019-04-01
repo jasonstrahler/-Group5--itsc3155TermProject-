@@ -1,4 +1,24 @@
-<table>   
+<HTML>
+	<head>
+	</head>
+	<body>
+		<select id = "pull">
+			<option value="" disabled selected>Choose a Class</option>
+			<option value="class1">Class 1</option>
+			<option value="class2">Class 2</option>
+			<option value="class3">Class 3</option>
+		</select>
+		<button onclick="selectClass()">Select Class</button>
+		
+	</body>
+
+	<div id = "searchData">
+		<input type="text" id="search" placeholder="Search">
+		<button onclick="searchDataTable()">Search</button>
+	</div>
+	
+	
+	<table>   
     <tr>     
         <th>Class Name |</th>     
         <th> Professor Name |</th>   
@@ -13,32 +33,9 @@
             <td><%= link_to 'Select', classroom_path(c) %></td>
             </tr>   
     <% end %> 
-</table>
+	</table>
 
-<HTML>
-	<head>
-	</head>
-	<body>
-		<select id = "pull">
-			<option value="" disabled selected>Choose a Class</option>
-			<option value="class1">Class 1</option>
-			<option value="class2">Class 2</option>
-			<option value="class3">Class 3</option>
-		</select>
-		<button onclick="selectClass()">Select Class</button>
-		
-	</body>
-	
-	<div id = "searchData">
-		<input type="text" id="search" placeholder="Search">
-		<button onclick="searchDataTable()">Search</button>
-	</div>
-	
-	
 	<div id="output"></div>
-	
-	
-	
 	
 <SCRIPT type="text/javascript">
 	var classFile = "";
@@ -97,7 +94,5 @@
 			document.getElementById("output").innerHTML =  searchVal; 
 		 }
 	}
-
-
 </SCRIPT>
 </HTML>
