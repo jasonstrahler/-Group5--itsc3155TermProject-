@@ -9,7 +9,13 @@ h1 {
     color: #ffffff;
 }
 
+h2 {
+    text-align: center;
+    color: #ffffff;
+}
+
 p {
+    text-align: center;
     color: #ffffff;
 }
 
@@ -18,9 +24,18 @@ th {
 }
 
 input[type=text] {
-    text-align: center;
-    vertical-align: middle;
     padding: 12px 12px;
     border: 2px solid #ccc;
     background-color: #f8f8f8;
+}
+
+.field{
+    text-align: center;
+    color: #ffffff;
+    padding: 12px 12px;
+}
+
+.slinks {
+    text-align: center;
+    color: #ffffff;
 }
