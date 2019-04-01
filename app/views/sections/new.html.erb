@@ -1,0 +1,29 @@
+<%= form_for @classroom do |f| %>    
+        <p>     
+        
+        <%= f.label :ClassName %><br>    
+        <%= f.text_field :ClassName %> 
+        
+        </p>   
+        
+        
+        <p>    
+        
+        <%= f.label :ProfessorName %><br>    
+        
+        <%= f.text_area :ProfessorName %>  
+        
+        </p>    
+        
+        <p>    
+        
+        <%= f.label :ClassDepartment %><br>    
+        
+        <%= f.text_area :ClassDepartment %>  
+        
+        </p>  
+        
+        <p>   
+        <%= f.submit %>  
+        </p> 
+<% end %>

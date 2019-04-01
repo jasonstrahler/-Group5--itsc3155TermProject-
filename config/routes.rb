@@ -6,9 +6,12 @@ Rails.application.routes.draw do
   get 'students/index'
   
 
-  resources :classrooms
+  resources :classrooms do
+    resources :sections
+  end
   resources :students
   
+  resources :sections
 
   devise_scope :user do
 
