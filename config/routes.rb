@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sections/index'
+  get 'students/index'
   devise_for :users
   get 'user/user'
   get 'classroom/classroom'
@@ -6,7 +8,7 @@ Rails.application.routes.draw do
   get 'login/login'
   get 'login/classroom'
   
-  resources :users
+
   resources :classrooms
   resources :students
   
