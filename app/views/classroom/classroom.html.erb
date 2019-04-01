@@ -3,7 +3,7 @@
 	</head>
 	<body>
 		<select id = "pull">
-			<option value="temp">Choose a Class</option>
+			<option value="" disabled selected>Choose a Class</option>
 			<option value="class1">Class 1</option>
 			<option value="class2">Class 2</option>
 			<option value="class3">Class 3</option>
@@ -73,10 +73,11 @@
 	}
 	
 	function searchDataTable(){
-		 if (document.getElementById("search").value == "hi"){
-		 
-			document.getElementById("output").innerHTML =  "hi";
-			
+		 var searchVal = document.getElementById("search").value;
+		 if (searchVal == "hi"){
+			document.getElementById("output").innerHTML =  searchVal;
+		 } else {
+			document.getElementById("output").innerHTML =  searchVal; 
 		 }
 	}
 
