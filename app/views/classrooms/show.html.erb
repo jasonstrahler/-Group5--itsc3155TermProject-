@@ -1,29 +1,34 @@
-<<<<<<< HEAD
-<p>
-    <strong>Title:</strong>
-    <%= @classroom.ClassName %>
-</p>
+<div id="titles">
+    <div id="sub-data">
+        <div id="header">
+            <%= @classroom.ClassName %>
+        </div>
+    </div>
+    <div id="sub-data">   
+        <%= @classroom.ProfessorName %>
+    </div>
+    
+</div>
 
-<p>
-    <strong>Text:</string>
-    <%= @classroom.ProfessorName %>
-</p>
 
 
-<h2>Sections: </h2>
-<% @classroom.sections.each do |section| %>
-    <p>
+
+<div id="header">Sections: </div>
+    <div id="sections">
+    <% @classroom.sections.each do |section| %>
+    <div id="sub-data">
         <strong>Section Name:</strong>
         <%= section.sectionCode %>
-    </p>
-        <p>
-    <%= link_to 'Select', section_path(section) %>
-    </p>
-<h2>Add a section: </h2>
-<% end %>
+        <%= link_to 'Select', section_path(section) %>
+        <% end %>
+    </div>
+</div>
+
+
+
 
 <%= form_for([@classroom, @classroom.sections.build]) do |f| %>
-    
+    <h2>Add a section: </h2>
     <p>
         <%= f.label :sectionCode %><br>
         <%= f.text_field :sectionCode %>
