@@ -13,7 +13,7 @@
 
 
 
-<div id="header">Sections: </div>
+<div id="headerSections">Sections: </div>
     <div id="sections">
     <% @classroom.sections.each do |section| %>
     <div id="sub-data">
@@ -26,22 +26,23 @@
 
 
 
+<div id="newClass">
+    <%= form_for([@classroom, @classroom.sections.build]) do |f| %>
+        <div id="h2Header">Add a section: </div>
+        <p>
+            <%= f.label :sectionCode %><br>
+            <%= f.text_field :sectionCode %>
+        </p>
 
-<%= form_for([@classroom, @classroom.sections.build]) do |f| %>
-    <h2>Add a section: </h2>
-    <p>
-        <%= f.label :sectionCode %><br>
-        <%= f.text_field :sectionCode %>
-    </p>
+        <p>
+            <%= f.submit %>
+        </p>
+    <% end %>
+</div>
 
-    <p>
-        <%= f.submit %>
-    </p>
-<% end %>
-
-<p> <%= @classroom.ClassName %></p>
 
 <div class="slinks">
+    Return to 
     <%= link_to "Classroom List", "/classrooms/index" %>
 </div>
 

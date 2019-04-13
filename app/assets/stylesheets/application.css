@@ -13,6 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#h2Header{
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
 h2 {
     display: block;
 }
@@ -24,31 +42,20 @@ h2 {
 
 .slinks {
     text-align: center;
-    color: #ffffff;
+    color: black;
 }
 
-p{
-    color: #ffffff;
-}
-
-tr {
-    color: #ffffff;
-}
-
-td {
-    color: #ffffff;    
-}
 
 .output {
     color: #ffffff;    
 }
 
 a:link{
-    color: #ffffff;
+    color: #9b9b9b;
 }
 
 a:visited{
-    color: #b7b7b7;
+    color: #9b9b9b;
 }
 
 a:hover{
@@ -57,5 +64,20 @@ a:hover{
 
 a:active{
     color: #dddddd;    
+}
+
+#websiteHeader{
+    background-color: #004525;
+    position: absolute;
+    height: 160px;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+#wrapper {
+    padding-top: 190px;
+    position: relative;
+    margin: 0 auto;
 }
 

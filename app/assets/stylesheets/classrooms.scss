@@ -3,22 +3,68 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+html{
+    color: black;
+}
+
+body{
+    padding-bottom: 120px;
+}
+
 #titles{
     text-align: left;
-    color: white;
+    margin-bottom: 50px;
 }
 
 #sections{
     text-align: left;
-    color: white;
+    margin-left: 50px;
 }
 
 #header{
     font-size: 36px;
     font-weight: bold;
-    color: white;
+}
+
+
+#tableLayout table{
+    text-align: left;
+    border-spacing: 15px 5px;
+}
+
+#headerSections{
+    font-size: 20px;
+    margin: 0 auto;
+    
 }
 
 #sub-data{
-    border-left: 20px;
+}
+
+#searchData{
+    height: 10px;
+    padding: 10px;
+}
+
+#searchData input{
+    padding: 5px;
+    height: 6px;
+    
+}
+
+#tableLayout {
+    padding: 10px;
+}
+
+#newClass{
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    margin: 0 auto;
+    width: 15%;
+    margin-bottom: 30px;
+}
+
+p{
+    text-align: center;
 }
