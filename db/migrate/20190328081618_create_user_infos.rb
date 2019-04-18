@@ -1,6 +1,6 @@
 class CreateUserInfos < ActiveRecord::Migration[5.2]
   def change
-    create_table :user_infos do |t|
+    create_table :students do |t|
       t.integer :grade
       t.references :classroom, foreign_key: true
       t.references :section, foreign_key: true

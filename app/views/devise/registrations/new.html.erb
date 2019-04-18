@@ -25,6 +25,12 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
+  
+  <div class="field">
+    <%= f.label :section_id %><br />
+    <%= f.password_field :section_id, autocomplete: "section-id" %>
+  </div>
+
 
   <div class="actions">
     <%= f.submit "Sign up" %>

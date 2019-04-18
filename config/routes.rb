@@ -11,7 +11,12 @@ Rails.application.routes.draw do
   end
   resources :students
   
-  resources :sections
+  #resources :sections
+
+  resources :sections do
+    resources :students
+  end
+
 
   devise_scope :user do
 

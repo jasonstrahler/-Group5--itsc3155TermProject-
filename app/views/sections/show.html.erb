@@ -1,4 +1,15 @@
 <div class="slinks">
+    
+    
+    <% @students.each do |student| %>
+    
+            <% @temp = User.find(student.user_id) %>
+            
+            <p>Email: <%= @temp.email %></p>
+            
+    <% end %>
+    
+    <p>Section Code: <%= @section.sectionCode %> </p>
     Return to 
     <%= link_to "Classroom List", "/classrooms/index" %>
 </div>
