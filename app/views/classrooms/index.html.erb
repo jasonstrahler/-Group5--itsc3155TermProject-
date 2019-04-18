@@ -15,8 +15,10 @@
 
 	<div id = "searchData">
 		<input type="text" id="search" placeholder="Search">
-		<button onclick="searchDataTable()">Search</button>
+		<button onclick="searchDataTable()">Search</button> 
 	</div>
+	
+	
 	
 	<div id="tableLayout">
 		<table>   
@@ -25,15 +27,18 @@
         	<th> Professor Name</th>
         	<th> Class Department</th>
         	<th> Select</th>
-    	</tr>    
+    	</tr>
+    	<div id="classList">
     	<% @classrooms.each do |c| %>   
         	<tr>       
             	<td><%= c.ClassName %></td>   
             	<td><%= c.ProfessorName %></td>   
             	<td><%= c.ClassDepartment %></td>    
-            	<td><%= link_to 'Select', classroom_path(c) %></td>
-            </tr>   
-    	<% end %> 
+            	<button id="classes"><%= link_to 'Select', classroom_path(c) %></button>
+            </tr>
+            
+    	<% end %>
+    	</div>
 		</table>
 	</div>
 	
