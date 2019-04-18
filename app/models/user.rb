@@ -4,6 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          
-  has_many :user_infos
-  has_many :classrooms, :through => :user_infos
+  #has_many :user_infos
+ # has_many :classrooms , :through => :students
 end

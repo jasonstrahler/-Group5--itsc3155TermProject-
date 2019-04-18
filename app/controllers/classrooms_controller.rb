@@ -21,6 +21,8 @@ class ClassroomsController < ApplicationController
     end
   end
   
+
+  
   
   private
     def classroom_params

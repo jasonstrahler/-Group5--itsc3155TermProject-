@@ -1,4 +1,29 @@
 <div class="slinks">
+    
+    <table>
+        <tr>
+            <th>Email: </th>
+            <th>ID Number: </th>
+            <th>Grade: </th>
+        </tr>
+        
+        <% @students.each do |student| %>
+    
+            <% @temp = User.find(student.user_id) %>
+            <tr>
+                
+               <td> <%= @temp.email %></td>
+                <td>  <%= @temp.idNumber %></td>
+                <td> <%= student.grade %></td>
+                <td> <% link_to 'Select', student_path %></td> 
+            </tr>
+            
+    <% end %>
+        
+    </table>
+    
+    
+    <p>Section Code: <%= @section.sectionCode %> </p>
     Return to 
     <%= link_to "Classroom List", "/classrooms/index" %>
 </div>

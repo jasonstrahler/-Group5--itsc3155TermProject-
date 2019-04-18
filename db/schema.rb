@@ -28,16 +28,16 @@ ActiveRecord::Schema.define(version: 2019_03_28_083223) do
     t.index ["classroom_id"], name: "index_sections_on_classroom_id"
   end
 
-  create_table "user_infos", force: :cascade do |t|
+  create_table "students", force: :cascade do |t|
     t.integer "grade"
     t.integer "classroom_id"
     t.integer "section_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["classroom_id"], name: "index_user_infos_on_classroom_id"
-    t.index ["section_id"], name: "index_user_infos_on_section_id"
-    t.index ["user_id"], name: "index_user_infos_on_user_id"
+    t.index ["classroom_id"], name: "index_students_on_classroom_id"
+    t.index ["section_id"], name: "index_students_on_section_id"
+    t.index ["user_id"], name: "index_students_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2019_03_28_083223) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "section"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "idNumber"
