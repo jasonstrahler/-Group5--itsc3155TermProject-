@@ -9,9 +9,10 @@ Rails.application.routes.draw do
   resources :classrooms do
     resources :sections
   end
+  
   resources :students
   
-  #resources :sections
+  put '/sections/:id', to: 'sections#join', as: 'section'
 
   resources :sections do
     resources :students

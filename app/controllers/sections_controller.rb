@@ -12,7 +12,7 @@ class SectionsController < ApplicationController
     def create
         @classroom = Classroom.find(params[:classroom_id])
         @section = @classroom.sections.create(section_params)
-        
+        @section[:classroom_id] = @classroom.id
         #@section.user_id
         
         @student = Student.new
@@ -27,6 +27,15 @@ class SectionsController < ApplicationController
         #@section[:user_id] = current_user.id
         redirect_to classroom_path(@classroom)
     end
+    
+    def join
+        @student = Student.new
+        @student[:user_id] = current_user.id
+        @student[:section_id] = params[:id]
+        @student[:classroom_id] = Section.find(params[:id]).classroom_id
+        @student.save!
+    end
+
     
     private
         def section_params

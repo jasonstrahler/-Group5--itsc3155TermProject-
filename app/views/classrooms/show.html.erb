@@ -20,6 +20,8 @@
         <strong>Section Name:</strong>
         <%= section.sectionCode %>
         <%= link_to 'Select', section_path(section) %>
+
+        <%= link_to 'Join', section_path(section), method: :put, data: { confirm: 'Do you want to be added to this class?' } %>
         <% end %>
     </div>
 </div>
