@@ -28,12 +28,28 @@ class SectionsController < ApplicationController
         redirect_to classroom_path(@classroom)
     end
     
+    def destroy
+        @student = Student.find_by user_id: current_user.id, section_id: params[:id]
+        if(@student.present?)
+            @student.destroy
+            
+                    respond_to do |format|
+                format.html { render :template => "classrooms/destroy" }
+            end
+
+        end
+    end
+    
     def join
         @student = Student.new
         @student[:user_id] = current_user.id
         @student[:section_id] = params[:id]
         @student[:classroom_id] = Section.find(params[:id]).classroom_id
         @student.save!
+        
+                    respond_to do |format|
+                format.html { render :template => "sections/join" }
+            end
     end
 
     

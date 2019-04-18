@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :sections
   end
   
+  
   resources :students
   
   put '/sections/:id', to: 'sections#join', as: 'section'

@@ -20,8 +20,22 @@
         <strong>Section Name:</strong>
         <%= section.sectionCode %>
         <%= link_to 'Select', section_path(section) %>
-
-        <%= link_to 'Join', section_path(section), method: :put, data: { confirm: 'Do you want to be added to this class?' } %>
+        
+        <% Student.where(["user_id = ? AND section_id = ?", current_user.id, section.id]) %>
+        
+        <% if Student.where(["user_id = ? AND section_id = ?", current_user.id, section.id]).length > 0 %>
+        <%= link_to 'Drop', section_path(section),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %>
+            
+        
+            <% else %>
+                 <%= link_to 'Join', section_path(section), method: :put, data: { confirm: 'Do you want to be added to this class?' } %>   
+           
+        <% end %>
+            
+        
+        
         <% end %>
     </div>
 </div>
