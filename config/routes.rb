@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   get 'sections/index'
   get 'students/index'
-  devise_for :users
+  
   get 'classrooms/index'
   get 'students/index'
   
+  
+  devise_for :users, :controllers => { registrations: 'registrations' }
 
   resources :classrooms do
     resources :sections
