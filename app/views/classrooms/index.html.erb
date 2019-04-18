@@ -11,38 +11,37 @@
 		<button onclick="selectClass()">Select Class</button>
 		
 		
-	</body> -->
+	</body>
 
 	<div id = "searchData">
 		<input type="text" id="search" placeholder="Search">
 		<button onclick="searchDataTable()">Search</button> 
-	</div>
+	</div> -->
 	
 	
 	
 	<div id="tableLayout">
-		<table>   
-    	<tr>     
-        	<th>Class Name</th>
-        	<th> Professor Name</th>
-        	<th> Class Department</th>
-        	<th> Select</th>
-    	</tr>
-    	<div id="classList">
     	<% @classrooms.each do |c| %>   
-        	<tr>       
-            	<td><%= c.ClassName %></td>   
-            	<td><%= c.ProfessorName %></td>   
-            	<td><%= c.ClassDepartment %></td>    
-            	<button id="classes"><%= link_to 'Select', classroom_path(c) %></button>
-            </tr>
-            
+        	<%= link_to classroom_path(c) do %>
+        	<div id="classes">
+        		<div id="classList">   
+            		<%= c.ClassName %>
+            		<div id="profName"><%= c.ProfessorName %></div>
+            	</div>
+            </div>
+            <% end %>	
+			
     	<% end %>
-    	</div>
-		</table>
-		
-		<%= link_to 'Add new class', new_classroom_path %>
+    	
+    	<%= link_to new_classroom_path do %>
+			<div id="newClassLink">
+				Create New Class
+			</div>
+		<% end %>
 	</div>
+	
+	
+
 	
 
 	<div id="output"></div>
@@ -104,5 +103,22 @@
 			document.getElementById("output").innerHTML =  searchVal; 
 		 }
 	}
+	
+	
+	function colorSelect(){
+		var element = document.getElementById('classes');
+		element.style.background = getRandomColor();
+	}
+	
+	function getRandomColor() {
+  		var letters = '0123456789ABCDEF';
+  		var color = '#';
+  		for (var i = 0; i < 6; i++) {
+    		color += letters[Math.floor(Math.random() * 16)];
+  		}
+  		return color;
+	}
+	
+	
 </SCRIPT>
 </HTML>
