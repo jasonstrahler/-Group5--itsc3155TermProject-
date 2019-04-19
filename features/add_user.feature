@@ -5,13 +5,11 @@ Feature: Add a user to the login portal
   I want to be able to have a login
 
 Scenario Outline: Creating a new account
-  Given I am a new, authenticated user
-  When I go to register 
-
+  Given I am on the homepage
   And I fill in the email field "email" with "<email>"
   And I fill in the id field "idNumber" with "<idNumber>"
   And I fill in the password field "password" with "<password>"
-  And I fill in the password confirmation field "password_confirmation" with "<password>"
+  And I fill in the password confirmation field "password" with "<password>"
   And I press "Sign up"
   Then I should see "logged in as <email>"
   

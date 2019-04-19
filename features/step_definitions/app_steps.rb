@@ -1,15 +1,9 @@
-Given ("I am a new, authenticated user") do
-  email = 'djohn270@uncc.edu'
-  password = 'randPass'
-  User.new(:email => email, :password => password, :password_confirmation => password).save!
-end
-
-When("I go to register") do
+Given ("I am on the homepage") do
   visit '/users/sign_up'
 end
 
 When("I fill in the email field {string} with {string}") do |string, string2|
-  fill_in "email", :with => email
+  fill_in :email, with: "email@gmail.com"
 end
 
 When("I fill in the id field {string} with {string}") do |string, string2|
@@ -25,9 +19,9 @@ When("I fill in the password confirmation field {string} with {string}") do |str
 end
 
 When("I press {string}") do |string|
-    click_button "Sign in"
+    click_button "Sign up"
 end
 
 Then("I should see {string}") do |string|
-  page.html.should include(string)
+  expect(page).to have_content(string)
 end
