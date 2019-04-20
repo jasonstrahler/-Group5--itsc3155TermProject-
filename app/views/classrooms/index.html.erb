@@ -22,28 +22,20 @@
 	
 	<div id="tableLayout">
     	<% @classrooms.each do |c| %>   
-
-        	<tr>       
-            	<td><%= c.ClassName %></td>   
-            	<td><%= c.ProfessorName %></td>   
-            	<td><%= c.ClassDepartment %></td>    
-            	<td><%= link_to 'Select', classroom_path(c) %></td>
-            </tr>   
-    	<% end %> 
-		</table>
 		
-		<% if( @user.userType == "instructor") %>
-			<%= link_to 'Add new class', new_classroom_path %>
+			<% if( @user.userType == "instructor") %>
+				<%= link_to 'Add new class', new_classroom_path %>
 
-        	<%= link_to classroom_path(c) do %>
-        	<div id="classes">
-        		<div id="classList">   
-            		<%= c.ClassName %>
-            		<div id="profName"><%= c.ProfessorName %></div>
+        		<%= link_to classroom_path(c) do %>
+        		<div id="classes">
+        			<div id="classList">   
+            			<%= c.ClassName %>
+            			<div id="profName"><%= c.ProfessorName %></div>
+            		</div>
             	</div>
-            </div>
-            <% end %>	
+            	<% end %>	
 			
+    		<% end %>
     	<% end %>
     	
     	<%= link_to new_classroom_path do %>
