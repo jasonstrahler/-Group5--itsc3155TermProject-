@@ -5,7 +5,7 @@ class SectionsController < ApplicationController
         @students = Student.where("section_id = ?", params[:id])
         
         @currentUser = User.find(current_user.id)
-        @assignment = Assignment.where("section_id = ?", params[:id])
+        @assignments = Assignment.where("section_id = ? AND user_id IS NULL", params[:id])
     end
     
     def new

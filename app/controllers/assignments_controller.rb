@@ -6,7 +6,7 @@ class AssignmentsController < ApplicationController
     
     
     def new
-        @assignment = Assignment.new
+       @assignment = Assignment.new
     end
     
     def create
@@ -25,9 +25,19 @@ class AssignmentsController < ApplicationController
         @assignment = @section.assignments.create(assignment_params)
         
         @assignment[:section_id] = @section.id
-        @assignment[:user_id] = Student.find_by_user_id(current_user.id)
-        
+       #@assignment[:user_id] = Student.find_by_user_id(current_user.id)
+        #@assignment[:user_id] =
         @assignment.save!
+        
+        @students = Student.where("section_id = ?", params[:section_id])
+        
+        @students.each do |temp|
+            @tempAssignment = Assignment.create(assignment_params)
+            @tempAssignment[:user_id] = temp.user_id
+            @tempAssignment[:section_id] = @section.id
+            @tempAssignment.save!
+        end
+        
         redirect_to section_path(@section)
     end
     

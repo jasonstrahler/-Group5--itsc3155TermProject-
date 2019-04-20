@@ -1,12 +1,12 @@
-<p> <%= @student.email %></p>
+
 
 <h2> Assignments: </h2>
 
 <div id="tableLayout">
 	<% @assignments.each do |c| %>   
     		<%= link_to assignment_path(c) do %>
-                Name: <p> c.title </p>
-                Description: <p> c.description </p>
+                Name: <p> <%- c.title %> </p>
+                Description: <p> <%= c.description %> </p>
         	<% end %>	
 	<% end %>
 	

@@ -17,8 +17,12 @@ class StudentsController < ApplicationController
     
     redirect_to @student
 end
+
+
   def show
-    @student = User.find(params[:id])
+   # @user = User.find(params[:id])
+  
+    @student = Student.find_by_id(params[:id])
     
     @assignments = Assignment.where("user_id = ?", @student.id)
   end
