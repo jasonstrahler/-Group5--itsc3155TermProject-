@@ -1,19 +1,23 @@
 Rails.application.routes.draw do
   get 'sections/index'
   get 'students/index'
-  
+  get 'assignments/index'
   get 'classrooms/index'
   get 'students/index'
+
   
   
-  devise_for :users, :controllers => { registrations: 'registrations' }
 
   resources :classrooms do
     resources :sections
   end
+  devise_for :users, :controllers => { registrations: 'registrations' }
   
+  resources :assignments
   
-  resources :students
+  resources :students do
+    resources :assignments
+  end
   
   put '/sections/:id', to: 'sections#join', as: 'section'
 

@@ -43,7 +43,7 @@
 </div>
 
 
-
+<% if(@currentUser.userType == "instructor") %>
 <div id="newClass">
     <%= form_for([@classroom, @classroom.sections.build]) do |f| %>
         <div id="h2Header">Add a section: </div>
@@ -57,7 +57,7 @@
         </p>
     <% end %>
 </div>
-
+<% end %>
 
 <div class="slinks">
     Return to 

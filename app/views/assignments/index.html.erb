@@ -1,0 +1,18 @@
+<div id="tableLayout">
+    <% if params[:student_id] != nil %>
+	<% @assignments.each do |c| %>   
+		<div id="classes">
+    	    <div id="classList">   
+            	<tr>       
+                	<td><%= c.title %></td>   
+                	<div id="profName"><td><%= c.description %></td></div> 
+                	<td><%= c.grade %></td>    
+                	<td><%= c.completed %></td>
+                	<td><%= c.feedback %></td>
+                	<td><%= link_to 'Select', classroom_path(c) %></td>
+                </tr>   
+            </div>
+        </div>
+    <% end %>
+	<% end %> 
+</div>

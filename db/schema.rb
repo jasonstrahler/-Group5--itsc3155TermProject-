@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_28_083223) do
+ActiveRecord::Schema.define(version: 2019_04_20_033229) do
+
+  create_table "assignments", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.datetime "openDate"
+    t.datetime "closeDate"
+    t.decimal "grade"
+    t.string "userResponse"
+    t.integer "completed"
+    t.string "feedback"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_assignments_on_user_id"
+  end
 
   create_table "classrooms", force: :cascade do |t|
     t.string "ClassName"

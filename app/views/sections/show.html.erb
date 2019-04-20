@@ -4,7 +4,7 @@
         <tr>
             <th>Email: </th>
             <th>ID Number: </th>
-            <th>Grade: </th>
+            <% if(@currentUser.userType != "student") %><th>Grade: </th><% end %>
         </tr>
         
         <% @students.each do |student| %>
@@ -17,7 +17,7 @@
                 <% if(@currentUser.userType != "student") %>
                 <td> <%= student.grade %></td>
                 <% end %>
-                <td> <% link_to 'Select', student_path %></td> 
+                <td> <%= link_to 'Select', student_path(@temp) %></td> 
             </tr>
             
     <% end %>
