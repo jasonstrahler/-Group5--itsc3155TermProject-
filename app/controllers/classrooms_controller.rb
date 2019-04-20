@@ -10,7 +10,7 @@ class ClassroomsController < ApplicationController
     @user = User.find_by_id(current_user.id)
     
     
-    end
+  end
   
   def new
     @classroom = Classroom.new

@@ -28,18 +28,6 @@ class AssignmentsController < ApplicationController
         @assignment[:user_id] = Student.find_by_user_id(current_user.id)
         
         @assignment.save!
-        #@section.user_id
-=begin
-        @student = Student.new
-        @student[:user_id] = current_user.id
-        @student[:classroom_id] = params[:classroom_id]
-        @student[:section_id] = @section.id
-        @student.save!
-       # @student[:section_id] 
-=end
-        #@user = User.where("id = ?", current_user.id)
-       # User.update(current_user.id, :section => params[:sectionCode])
-        #@section[:user_id] = current_user.id
         redirect_to section_path(@section)
     end
     

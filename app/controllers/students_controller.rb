@@ -19,6 +19,8 @@ class StudentsController < ApplicationController
 end
   def show
     @student = User.find(params[:id])
+    
+    @assignments = Assignment.where("user_id = ?", @student.id)
   end
   
   private 

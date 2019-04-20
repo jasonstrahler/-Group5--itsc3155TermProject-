@@ -5,6 +5,7 @@ class SectionsController < ApplicationController
         @students = Student.where("section_id = ?", params[:id])
         
         @currentUser = User.find(current_user.id)
+        
     end
     
     def new
