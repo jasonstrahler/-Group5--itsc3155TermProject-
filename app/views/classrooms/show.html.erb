@@ -30,17 +30,17 @@
         
         
         <% if(@currentUser.userType != "instructor") %>
-        <% if Student.where(["user_id = ? AND section_id = ?", current_user.id, section.id]).length > 0 %>
-        <%= link_to 'Drop', section_path(section),
-        method: :delete,
-        data: { confirm: 'Are you sure?' } %>
+            <% if Student.where(["user_id = ? AND section_id = ?", current_user.id, section.id]).length > 0 %>
+                <%= link_to 'Drop', section_path(section),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
             
         
             <% else %>
                  <%= link_to 'Join', section_path(section), method: :put, data: { confirm: 'Do you want to be added to this class?' } %>   
            
-        <% end %>
             <% end %>
+        <% end %>
         
         
         <% end %>
@@ -55,29 +55,36 @@
         
         
     </div>
-</div>
+
 
 
 <% if(@currentUser.userType == "instructor") %>
-<div id="newClass">
-    <%= form_for([@classroom, @classroom.sections.build]) do |f| %>
-        <div id="h2Header">Add a section: </div>
-        <p>
+    <div id="newClass"  style="display: none">
+        <%= form_for([@classroom, @classroom.sections.build]) do |f| %>
+            <div id="h2Header">Add a section: </div>
+            <p>
             <%= f.label :sectionCode %><br>
             <%= f.text_field :sectionCode %>
-        </p>
+            </p>
 
-        <p>
+            <p>
             <%= f.submit %>
-        </p>
-    <% end %>
-</div>
+            </p>
+        <% end %>
+    </div>
 <% end %>
 
-<div class="slinks">
-    Return to 
-    <%= link_to "Classroom List", "/classrooms/index" %>
 </div>
+
+
+<div>
+<%= link_to "/classrooms/index" do %>
+    <div id="returnClass">
+        Return to Classrooms List
+    </div>
+<% end %>
+</div>
+
 
 <script>
     var button = document.getElementById('show');

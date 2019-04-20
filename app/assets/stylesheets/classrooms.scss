@@ -63,7 +63,6 @@ body{
     width: 15%;
     margin-bottom: 30px;
     background-color: #004525;
-    display: none;
 }
 
 p{
@@ -176,7 +175,7 @@ p{
     box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
     cursor:pointer;
     //vertical-align:middle;
-    max-width: 150px;
+    max-width: 200px;
     text-align: center;
     margin-left: 15px;
     margin-top: 13px;
@@ -187,4 +186,9 @@ p{
 #return:active {
     color:red;
     box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
+}
+
+#returnClass{
+    position: relative;
+    display: block;
 }
