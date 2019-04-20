@@ -1,5 +1,7 @@
 <div class="slinks">
     
+    <p>Section Code: <%= @section.sectionCode %> </p>
+    
     <table>
         <tr>
             <th>Email: </th>
@@ -8,24 +10,30 @@
         </tr>
         
         <% @students.each do |student| %>
-    
             <% @temp = User.find(student.user_id) %>
             <tr>
-                
-               <td> <%= @temp.email %></td>
+                <td> <%= @temp.email %></td>
                 <td>  <%= @temp.idNumber %></td>
                 <% if(@currentUser.userType != "student") %>
                 <td> <%= student.grade %></td>
                 <% end %>
                 <td> <%= link_to 'Select', student_path(@temp) %></td> 
             </tr>
-            
-    <% end %>
-        
+        <% end %>
+    </table>
+    
+    <table>
+        <th>Assignments</th>
+        <% @assignment.each do |student| %>
+            <% #@temp = User.find(student.user_id)%> 
+        <tr>Assignment: <%= student.title %></tr> 
+        <tr>Description: <%= student.description %></tr>
+        <tr>Open Date: <%= student.openDate %></tr>
+        <tr>Due Date: <%= student.closeDate %></tr><br>
+        <% end %>
     </table>
     
     
-    <p>Section Code: <%= @section.sectionCode %> </p>
     Return to 
     <%= link_to "Classroom List", "/classrooms/index" %>
     
@@ -40,6 +48,12 @@
             <p>
                 <%= f.label :description %><br>
                 <%= f.text_field :description %>
+            </p>
+            
+            
+            <p>
+                <%= f.label :openDate %><br>
+                <%= f.date_field :openDate %>
             </p>
             
             <p>
