@@ -2,7 +2,7 @@ class StudentsController < ApplicationController
   def edit
     
     # limits the number of tuples returned to 1 (first one found)
-   @student = Student.find_by(:user_id => params[:id])
+   @student = Student.where("id = ? and classroom_id = ?", params[:id])
     
   end
   
@@ -12,7 +12,7 @@ class StudentsController < ApplicationController
     # THATS TO DO
     # at the moment, there are multiple records returned, but we need the 
     # one given in the URL
-    @student = Student.find_by(:user_id => params[:id])
+    @student = Student.find_by_id(params[:id])
     @student.update(student_params)
     
     redirect_to @student

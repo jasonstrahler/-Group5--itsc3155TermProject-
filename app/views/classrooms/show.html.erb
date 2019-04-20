@@ -25,13 +25,7 @@
         </div>
         <% end %>
         
-        <div id="show">
-        <div id="classes">
-            <div id="classList">
-                + Add New Section
-            </div>
-        </div>
-        </div>
+        
         <% #Student.where(["user_id = ? AND section_id = ?", current_user.id, section.id]) %>
         
         
@@ -50,11 +44,21 @@
         
         
         <% end %>
+        
+        <div id="show">
+        <div id="classes">
+            <div id="classList">
+                + Add New Section
+            </div>
+        </div>
+        </div>
+        
+        
     </div>
 </div>
 
 
-
+<% if(@currentUser.userType == "instructor") %>
 <div id="newClass">
     <%= form_for([@classroom, @classroom.sections.build]) do |f| %>
         <div id="h2Header">Add a section: </div>
@@ -68,7 +72,7 @@
         </p>
     <% end %>
 </div>
-
+<% end %>
 
 <div class="slinks">
     Return to 
