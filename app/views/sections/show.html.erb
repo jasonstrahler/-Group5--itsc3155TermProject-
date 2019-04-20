@@ -14,7 +14,9 @@
                 
                <td> <%= @temp.email %></td>
                 <td>  <%= @temp.idNumber %></td>
+                <% if(@currentUser.userType != "student") %>
                 <td> <%= student.grade %></td>
+                <% end %>
                 <td> <% link_to 'Select', student_path %></td> 
             </tr>
             

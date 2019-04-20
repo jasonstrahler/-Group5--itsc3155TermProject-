@@ -36,68 +36,11 @@
     	<% end %> 
 		</table>
 		
-		<%= link_to 'Add new class', new_classroom_path %>
+		<% if( @user.userType == "instructor") %>
+			<%= link_to 'Add new class', new_classroom_path %>
+		<% end %>
 	</div>
 	
 
 	<div id="output"></div>
 	
-<SCRIPT type="text/javascript">
-	var classFile = "";
-	
-            function readTextFile(file) {
-                var rawFile = new XMLHttpRequest();
-                var table = "<table>";
-				
-                rawFile.onreadystatechange = function () {
-                    if (rawFile.readyState === 4 && (rawFile.status === 200 || rawFile.status == 0)){
-							
-							var text = rawFile.responseText;
-							var split = text.split("\n");
-							var headerSplit = split[0].split(",");
-							table += "<tr>"
-							table = table + "<th>" + headerSplit[0] + "</th>";
-							table = table + "<th>" + headerSplit[1] + "</th>";
-							table = table + "<th>" + headerSplit[2] + "</th>";
-							table += "</tr>"
-
-							for (var i = 1; i < split.length; i++){
-								var tempSplit = split[i].split(",");
-								table += "<tr>";
-								table = table + "<td>" + tempSplit[0] + "</td>";
-								table = table + "<td>" + tempSplit[1] + "</td>";
-								table = table + "<td>" + tempSplit[2] + "</td>";
-								table += "</tr>"
-							}
-							
-							table += "</table>";
-							document.getElementById("output").innerHTML =  table;
-                    }
-                };
-                rawFile.open("GET", file, true);
-                rawFile.send(null);
-                
-                
-            }
-
-	/*function selectClass(){
-		var e = document.getElementById("pull") ;
-		var sel = e.options[e.selectedIndex].value;
-		if (sel == "class1"){
-			classFile = "data.csv";
-			readTextFile(classFile);
-		} else {
-			document.getElementById("output").innerHTML =  "NOOOOO";
-		}
-	}*/
-	
-	function searchDataTable(){
-		 var searchVal = document.getElementById("search").value;
-		 if (searchVal == "hi"){
-			document.getElementById("output").innerHTML =  searchVal;
-		 } else {
-			document.getElementById("output").innerHTML =  searchVal; 
-		 }
-	}
-</SCRIPT>
-</HTML>

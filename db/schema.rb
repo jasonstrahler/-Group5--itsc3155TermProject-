@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2019_03_28_083223) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "section"
+    t.string "userType", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "idNumber"

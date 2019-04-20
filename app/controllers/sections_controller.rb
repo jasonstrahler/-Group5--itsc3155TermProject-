@@ -3,6 +3,8 @@ class SectionsController < ApplicationController
     def show
         @section = Section.find(params[:id])
         @students = Student.where("section_id = ?", params[:id])
+        
+        @currentUser = User.find(current_user.id)
     end
     
     def new

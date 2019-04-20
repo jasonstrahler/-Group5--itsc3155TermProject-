@@ -33,6 +33,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       # t.datetime :locked_at
       #t.references :section, foreign_key: true
       t.string :section
+      t.string :userType, null: false, default: ""
       t.timestamps null: false
     end
 

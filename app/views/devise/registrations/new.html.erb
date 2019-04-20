@@ -26,6 +26,10 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
   
+  <div class="field">
+    <%= f.select(:userType, options_for_select([['Student', 'student'], ['Instructor', 'instructor'], ['TA', 'assistant']])) %>
+  </div>
+  
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

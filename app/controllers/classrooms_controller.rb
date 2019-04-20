@@ -1,11 +1,16 @@
 class ClassroomsController < ApplicationController
   def show
     @classroom = Classroom.find(params[:id])
+    @currentUser = User.find(current_user.id)
   end
   
   def index
     @classrooms = Classroom.all
-  end
+    
+    @user = User.find_by_id(current_user.id)
+    
+    
+    end
   
   def new
     @classroom = Classroom.new
