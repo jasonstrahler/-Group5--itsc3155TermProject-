@@ -22,8 +22,10 @@ ActiveRecord::Schema.define(version: 2019_04_20_033229) do
     t.integer "completed"
     t.string "feedback"
     t.integer "user_id"
+    t.integer "section_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["section_id"], name: "index_assignments_on_section_id"
     t.index ["user_id"], name: "index_assignments_on_user_id"
   end
 
