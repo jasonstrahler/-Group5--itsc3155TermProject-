@@ -34,16 +34,7 @@ html, body {
 h2 {
     display: block;
 }
-.actions{
-    text-align: center;
-    color: #ffffff;
-    padding: 12px 12px;
-}
 
-.slinks {
-    text-align: center;
-    color: black;
-}
 
 
 .output {
@@ -53,6 +44,7 @@ h2 {
 
 #websiteHeader{
     background-color: #004525;
+    color: white;
     position: absolute;
     height: 160px;
     left: 0;
@@ -64,6 +56,16 @@ h2 {
     padding-top: 190px;
     position: relative;
     margin: 0 auto;
+    
+    min-height: 100%;
+    background-image: url("/assets/uncc.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+
+#headerText{
+    color: white;
 }
 
 #headerText a:link{
@@ -81,4 +83,19 @@ h2 {
 #headerText a:active{
     color: #dddddd;    
 }
+/*------------------------------------------------*/
+#signup_links a:link{
+    color: #9b9b9b;
+}
 
+#signup_links a:visited{
+    color: #9b9b9b;
+}
+
+#signup_links a:hover{
+    color: #dddddd;    
+}
+
+#signup_links a:active{
+    color: #dddddd;    
+}
