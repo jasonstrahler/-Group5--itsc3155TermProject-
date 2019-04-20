@@ -10,6 +10,7 @@ class CreateAssignments < ActiveRecord::Migration[5.2]
       t.integer :completed
       t.string :feedback
       t.references :user, foreign_key: true
+      t.references :section, foreign_key: true
       t.timestamps
     end
   end

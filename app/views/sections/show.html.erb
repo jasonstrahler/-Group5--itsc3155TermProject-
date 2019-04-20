@@ -28,4 +28,32 @@
     <p>Section Code: <%= @section.sectionCode %> </p>
     Return to 
     <%= link_to "Classroom List", "/classrooms/index" %>
+    
+    <% if(@currentUser.userType == "instructor" || @currentUser.userType == "assistant") %>
+        <%= form_for([@section, @section.assignments.build]) do |f| %>
+            <div id="h2Header">Add an assignment: </div>
+            <p>
+                <%= f.label :title %><br>
+                <%= f.text_field :title %>
+            </p>
+    
+            <p>
+                <%= f.label :description %><br>
+                <%= f.text_field :description %>
+            </p>
+            
+            <p>
+                <%= f.label :closeDate %><br>
+                <%= f.date_field :closeDate %>
+            </p>
+            
+            <p>
+                <%= f.submit %>
+            </p>
+        <% end %>
+<% end %>
 </div>
+
+
+
+
