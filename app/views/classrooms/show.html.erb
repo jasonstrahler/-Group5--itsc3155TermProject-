@@ -7,7 +7,6 @@
     <div id="sub-data">   
         <%= @classroom.ProfessorName %>
     </div>
-    
 </div>
 
 
@@ -17,10 +16,22 @@
     <div id="sections">
     <% @classroom.sections.each do |section| %>
     <div id="sub-data">
-        <strong>Section Name:</strong>
-        <%= section.sectionCode %>
-        <%= link_to 'Select', section_path(section) %>
+        <%= link_to section_path(section) do %>
+        <div id="classes">
+            <div id="classList">
+                Section 
+                <%= section.sectionCode %>
+            </div>
+        </div>
+        <% end %>
         
+        <div id="show">
+        <div id="classes">
+            <div id="classList">
+                + Add New Section
+            </div>
+        </div>
+        </div>
         <% #Student.where(["user_id = ? AND section_id = ?", current_user.id, section.id]) %>
         
         
@@ -64,3 +75,21 @@
     <%= link_to "Classroom List", "/classrooms/index" %>
 </div>
 
+<script>
+    var button = document.getElementById('show');
+    
+    button.onclick = function() {
+    var div = document.getElementById('newClass');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'block';
+    }
+};
+    
+    
+    
+    
+    
+</script>

@@ -1,24 +1,27 @@
-<%= form_for @classroom do |f| %>    
-        <p>     
+<div id="formWrap">
+        <%= form_for @classroom do |f| %>    
+        <div id="sectionForm">
                 <%= f.label :ClassName %><br>    
                 <%= f.text_field :ClassName %> 
-        </p>   
+        </div>   
         
-        <p>    
+        <div id="sectionForm">    
                 <%= f.label :ProfessorName %><br>    
                 <%= f.text_field :ProfessorName %>  
-        </p>    
+        </div>    
         
-        <p>    
+        <div id="sectionForm">   
                 <%= f.label :ClassDepartment %><br>    
                 <%= f.text_field :ClassDepartment %>  
-        </p>  
+        </div>   
         
-        <p>   
-                <%= f.submit %>  
-        </p>
-        <div class=slinks>
-                <%= link_to "Classroom List", "/classrooms/index" %>
-        </div>
-<% end %>
-
+        <%= f.submit "Create" ,:id => 'return'%>  
+        
+        <%= link_to "/classrooms/index" do %>
+                <div id=return>
+                        Return
+                </div>
+        <% end %>
+        <% end %>
+        
+</div>
