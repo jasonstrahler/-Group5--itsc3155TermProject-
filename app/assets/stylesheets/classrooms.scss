@@ -68,3 +68,73 @@ body{
 p{
     text-align: center;
 }
+
+
+#classList{
+    width: 200px;
+    word-wrap: break-word;
+    padding-top: 5px;
+    background-color: #E6E6FA;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: black;
+    position: absolute;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#classes{
+    padding-top: 50px;
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 200px;
+    height: 72px;
+    float: left;
+    background-color: #734f96;
+    position: relative;
+}
+
+#className{
+    font-size: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#profName{
+    font-size: 12px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#classes:hover{
+    transform: scale(1.1);
+}
+
+
+#newClassLink{
+    position: absolute;
+    margin-top: 50px;
+    bottom: 0;
+    color: #404040;
+}
+
+#newClassLink:link{
+    color: #404040;
+}
+
+
+#newClassLink:visited{
+    color: #404040;
+}
+
+#newClassLink:hover{
+    color: #dddddd;    
+}
+
+#newClassLink:active{
+    color: #dddddd;    
+}

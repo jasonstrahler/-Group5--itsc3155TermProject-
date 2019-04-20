@@ -50,21 +50,6 @@ h2 {
     color: #ffffff;    
 }
 
-a:link{
-    color: #9b9b9b;
-}
-
-a:visited{
-    color: #9b9b9b;
-}
-
-a:hover{
-    color: #dddddd;    
-}
-
-a:active{
-    color: #dddddd;    
-}
 
 #websiteHeader{
     background-color: #004525;
@@ -79,5 +64,21 @@ a:active{
     padding-top: 190px;
     position: relative;
     margin: 0 auto;
+}
+
+#headerText a:link{
+    color: #9b9b9b;
+}
+
+#headerText a:visited{
+    color: #9b9b9b;
+}
+
+#headerText a:hover{
+    color: #dddddd;    
+}
+
+#headerText a:active{
+    color: #dddddd;    
 }
 
