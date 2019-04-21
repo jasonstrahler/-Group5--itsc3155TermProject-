@@ -6,7 +6,6 @@
 	<table>
 		<tr>
 			<th>Assignment: </th>
-			<th>Title: </th>
 			<th>Grade: </th>
 			<th>Feedback: </th>
 		</tr>
@@ -15,15 +14,14 @@
 		<tr>
 	        <% @student = Student.find(c.user_id) %>
 	        <% @temp = c %>
-    		<td>	<%= link_to  student_assignment_path(@student, @temp) do %>
+        	<td><p><%= c.title %></p></td>
+            <td><p><%= c.grade %></p></td>
+            <td><p><%= c.feedback %></p></td>
+            <td>	<%= link_to  student_assignment_path(@student, @temp) do %>
     		
                Select
                
         	<% end %>	</td>
-        	
-        	<td><p><%= c.title %></p></td>
-            <td><p><%= c.grade %></p></td>
-            <td><p><%= c.feedback %></p></td>
        	</tr>
 	<% end %>
 	</table>
