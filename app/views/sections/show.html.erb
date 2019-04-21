@@ -1,7 +1,7 @@
 <div class="slinks">
     
-    <p>Section Code: <%= @section.sectionCode %> </p>
-    
+    <div id="header">Section Code: <%= @section.sectionCode %> </div>
+    <div id="studentTable">
     <table>
         <tr>
             <th>Email: </th>
@@ -15,29 +15,47 @@
                 <td> <%= @temp.email %></td>
                 <td>  <%= @temp.idNumber %></td>
                 <% if(@currentUser.userType != "student") %>
-                <td> <%= student.grade %></td>
+                    <td> <%= student.grade %></td>
                 <% end %>
                 <td> <%= link_to 'Select', student_path(@temp) %></td> 
             </tr>
         <% end %>
     </table>
+    </div>
     
+    
+    <div id="assignTable">
     <table>
-        <th>Assignments</th>
+        <tr>
+            <th>Assignments</th>
+            <th>Description</th>
+            <th>Open Date</th>
+            <th>Due Date</th>
+        </tr>
         <% @assignments.each do |student| %>
-            <% #@temp = User.find(student.user_id)%> 
-        <tr>Assignment: <%= student.title %></tr> 
-        <tr>Description: <%= student.description %></tr>
-        <tr>Open Date: <%= student.openDate %></tr>
-        <tr>Due Date: <%= student.closeDate %></tr><br>
+            <% #@temp = User.find(student.user_id)%>
+        <tr>
+            <td><%= student.title %></td>
+            <td><%= student.description %></td>
+            <td><%= student.openDate %></td>
+            <td><%= student.closeDate %></td>
+        </tr>    
         <% end %>
     </table>
     
+    </div>
     
-    Return to 
-    <%= link_to "Classroom List", "/classrooms/index" %>
     
     <% if(@currentUser.userType == "instructor" || @currentUser.userType == "assistant") %>
+    
+    <div id="show">
+        Create new Assingment
+    </div>
+    
+    
+    
+    <div id="createAssign" style="display: none">
+    
         <%= form_for([@section, @section.assignments.build]) do |f| %>
             <div id="h2Header">Add an assignment: </div>
             <p>
@@ -65,9 +83,49 @@
                 <%= f.submit %>
             </p>
         <% end %>
+    </div>
+        
 <% end %>
+
+
+
+<%= link_to "/classrooms/index" do %>
+<div id="return">
+    Return to Classrooms
+</div>
+<% end %>
+
+
+
+
+
 </div>
 
 
 
+
+
+
+
+
+
+
+<script>
+    var button = document.getElementById('show');
+    
+    button.onclick = function() {
+    var div = document.getElementById('createAssign');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'block';
+    }
+};
+    
+    
+    
+    
+    
+</script>
 

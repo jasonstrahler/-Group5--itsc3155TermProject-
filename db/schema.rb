@@ -11,7 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2019_04_20_033229) do
-#USER ID IN ASSIGNMENTS REFERS TO STUDENTS
+
   create_table "assignments", force: :cascade do |t|
     t.string "title"
     t.string "description"
