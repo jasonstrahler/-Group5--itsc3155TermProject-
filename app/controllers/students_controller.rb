@@ -24,7 +24,7 @@ end
   
     @student = Student.find_by_id(params[:id])
     
-    @assignments = Assignment.where("user_id = ?", @student.id)
+    @assignments = Assignment.where("user_id = ?", params[:id])
   end
   
   private 

@@ -4,9 +4,11 @@
 
 <div id="tableLayout">
 	<% @assignments.each do |c| %>   
-    		<%= link_to assignment_path(c) do %>
-                Name: <p> <%- c.title %> </p>
-                Description: <p> <%= c.description %> </p>
+	        <% @student = Student.find(c.user_id) %>
+	        <% @temp = c %>
+    		<%= link_to student_assignment_path(@student, @temp) do %>
+    		
+               <p><%= c.title %></p>
         	<% end %>	
 	<% end %>
 	
