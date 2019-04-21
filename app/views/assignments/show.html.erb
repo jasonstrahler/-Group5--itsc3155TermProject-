@@ -15,15 +15,18 @@
     <div id="assignmentHeaders">Feedback:</div>
     <div id="assignmentData"> <%= @assignment.first.feedback %></div>
 </div>
-<% @student = Student.find_by_id(params[:student_id]) %>
-<% @assignment = Assignment.find_by_id(params[:id]) %>
 
 
-<%= link_to  edit_student_assignment_path(@student, @assignment) do %>
-    <div id = "returnAssignment">
-        Edit assignment
-    </div>
-<% end %>
+    <% @student = Student.find_by_id(params[:student_id]) %>
+    <% @user = User.find(current_user.id) %>
+    <% @assignment = Assignment.find_by_id(params[:id]) %>
+    <% if(@user.userType != "student") %>
+        <%= link_to  edit_student_assignment_path(@student, @assignment) do %>
+            <div id = "returnAssignment">
+                Edit assignment
+            </div>
+        <% end %>
+    <% end %>
 
 
 <%= link_to :back do %>

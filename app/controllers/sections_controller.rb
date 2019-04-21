@@ -42,7 +42,18 @@ class SectionsController < ApplicationController
 
         end
     end
-    
+    def update
+                @student = Student.new
+        @student[:user_id] = current_user.id
+        @student[:section_id] = params[:id]
+        @student[:classroom_id] = Section.find(params[:id]).classroom_id
+        @student.save!
+        
+                    respond_to do |format|
+                format.html { render :template => "sections/join" }
+            end
+        
+    end
     def join
         @student = Student.new
         @student[:user_id] = current_user.id

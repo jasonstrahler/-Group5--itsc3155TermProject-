@@ -42,16 +42,18 @@ class AssignmentsController < ApplicationController
     end
     
     def edit
-        @assignment = Assignment.find_by_id(params[:id])
+        @assignment = Assignment.find(params[:id])
+        @student = Student.find_by_id(params[:student_id])
+        
     end
     
     def update
-        @assignment = Assignment.find_by_id(params[:id])
-        @student = Student.find_by_id(params[:student_id])
+        @assignment = Assignment.find(params[:id])
+        @student = Student.find_by_id(@assignment.user_id)
         
         @assignment.update(assignment_params)
         
-        #redirect_to student_assignment_path(@student, @assignment)
+        redirect_to student_assignment_path(@student, @assignment)
             
     end
     
