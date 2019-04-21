@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     resources :assignments
   end
   
-  #put '/sections/:id', to: 'sections#join', as: 'section'
+ # put '/sections/:id', to: 'sections#join', as: 'section'
 
   resources :sections do
     resources :students
