@@ -48,7 +48,7 @@
     
     <% if(@currentUser.userType == "instructor" || @currentUser.userType == "assistant") %>
     
-    <div id="show">
+    <div id="showButton">
         Create new Assingment
     </div>
     
@@ -70,12 +70,12 @@
             
             
             <p>
-                <%= f.label :openDate %><br>
+                Open Date<br>
                 <%= f.date_field :openDate %>
             </p>
             
             <p>
-                <%= f.label :closeDate %><br>
+                Close Date<br>
                 <%= f.date_field :closeDate %>
             </p>
             
@@ -111,7 +111,7 @@
 
 
 <script>
-    var button = document.getElementById('show');
+    var button = document.getElementById('showButton');
     
     button.onclick = function() {
     var div = document.getElementById('createAssign');

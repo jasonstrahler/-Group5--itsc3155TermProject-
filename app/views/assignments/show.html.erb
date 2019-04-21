@@ -1,5 +1,24 @@
-Title: <p> <%= @assignment.first.title %></p>
-Description: <p> <%= @assignment.first.description %></p>
-Completed: <p> <%= @assignment.first.completed %></p>
-Grade: <p> <%= @assignment.first.grade %></p>
-Feedback: <p> <%= @assignment.first.feedback %></p>
+
+<div id="assignmentWrap">
+    <div id="assignmentHeaders">Title:</div>
+    <div id="assignmentData"> <%= @assignment.first.title %></div>
+
+    <div id="assignmentHeaders">Description:</div>
+    <div id="assignmentData"> <%= @assignment.first.description %></div>
+
+    <div id="assignmentHeaders">Completed:</div>
+    <div id="assignmentData"> <%= @assignment.first.completed %></div>
+
+    <div id="assignmentHeaders">Grade:</div>
+    <div id="assignmentData"> <%= @assignment.first.grade %></div>
+
+    <div id="assignmentHeaders">Feedback:</div>
+    <div id="assignmentData"> <%= @assignment.first.feedback %></div>
+</div>
+
+
+<%= link_to :back do %>
+    <div id="returnAssignment">
+        Return to Assignments List
+    </div>
+<% end %>
