@@ -3,13 +3,28 @@
 <h2> Assignments: </h2>
 
 <div id="tableLayout">
+	<table>
+		<tr>
+			<th>Assignment: </th>
+			<th>Title: </th>
+			<th>Grade: </th>
+			<th>Feedback: </th>
+		</tr>
+		
 	<% @assignments.each do |c| %>   
+		<tr>
 	        <% @student = Student.find(c.user_id) %>
 	        <% @temp = c %>
-    		<%= link_to student_assignment_path(@student, @temp) do %>
+    		<td>	<%= link_to  student_assignment_path(@student, @temp) do %>
     		
-               <p><%= c.title %></p>
-        	<% end %>	
+               Select
+               
+        	<% end %>	</td>
+        	
+        	<td><p><%= c.title %></p></td>
+            <td><p><%= c.grade %></p></td>
+            <td><p><%= c.feedback %></p></td>
+       	</tr>
 	<% end %>
-	
+	</table>
 </div>
