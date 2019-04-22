@@ -1,6 +1,10 @@
 
 
-<h2> Assignments: </h2>
+<h2> Engagement score: </h2>
+<center><%= @student.grade %> %
+
+<%= link_to 'Edit engagement score', edit_student_path(@student) %>
+<h2> Assignments: </h2></center>
 
 <div id="tableLayout">
 	<table>

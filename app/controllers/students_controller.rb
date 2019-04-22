@@ -2,7 +2,7 @@ class StudentsController < ApplicationController
   def edit
     
     # limits the number of tuples returned to 1 (first one found)
-   @student = Student.where("id = ? and classroom_id = ?", params[:id])
+   @student = Student.find_by_id(params[:id])
     
   end
   
