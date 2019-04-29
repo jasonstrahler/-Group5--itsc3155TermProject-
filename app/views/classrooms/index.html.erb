@@ -23,8 +23,8 @@
 	<div id="tableLayout">
     	<% @classrooms.each do |c| %>   
         		<%= link_to classroom_path(c) do %>
-        		<div id="classes">
-        			<div id="classList">   
+        		<div class="classes">
+        			<div class="classList">   
             			<%= c.ClassName %>
             			<div id="profName"><%= c.ProfessorName %></div>
             		</div>
@@ -34,8 +34,8 @@
     	
     <% if( @user.userType == "instructor") %>
     	<%= link_to new_classroom_path do %>
-			<div id="classes" style="background-color: #DA70D6">
-				<div id="classList" style="height: 32px">
+			<div class="classes" style="background-color: #DA70D6">
+				<div class="classList" style="height: 32px">
 					+ Add New Class
 				</div>
 			</div>
