@@ -1,10 +1,20 @@
 
+<div id="engage">
+Engagement score:
 
-<h2> Engagement score: </h2>
-<center><%= @student.grade %> %
+<div id="score" ><%= @student.grade %> % </div>
 
-<%= link_to 'Edit engagement score', edit_student_path(@student) %>
-<h2> Assignments: </h2></center>
+<% if(@currentUser.userType == "instructor") %> 
+
+	<%= link_to 'Edit engagement score', edit_student_path(@student) %>
+
+<%end%>
+
+</br>
+Assignments:
+
+</div>
+
 
 <div id="tableLayout">
 	<table>

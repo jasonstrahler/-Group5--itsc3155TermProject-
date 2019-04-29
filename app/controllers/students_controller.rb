@@ -23,7 +23,7 @@ end
    # @user = User.find(params[:id])
   
     @student = Student.find_by_id(params[:id])
-    
+    @currentUser = User.find(current_user.id)
     @assignments = Assignment.where("user_id = ?", params[:id])
     
   end
