@@ -15,7 +15,7 @@
 <div id="headerSections">Sections: </div>
     <div id="sections">
     <% @classroom.sections.each do |section| %>
-    <div id="sub-data">
+    <div id="tabledata">
         <%= link_to section_path(section) do %>
         <div id="classes">
             <div id="classList">
@@ -23,27 +23,29 @@
                 <%= section.sectionCode %>
             </div>
         </div>
-        <% end %>
         
         
-        <% #Student.where(["user_id = ? AND section_id = ?", current_user.id, section.id]) %>
-        
-        
+        <div id="class_drop">
         <% if(@currentUser.userType != "instructor") %>
             <% if Student.where(["user_id = ? AND section_id = ?", current_user.id, section.id]).length > 0 %>
                 <%= link_to 'Drop', section_path(section),
                 method: :delete,
                 data: { confirm: 'Are you sure?' } %>
-            
-        
             <% else %>
                  <%= link_to 'Join', section_path(section), method: :put, data: { confirm: 'Do you want to be added to this class?' } %>   
            
             <% end %>
         <% end %>
-        
+        </div>
         
         <% end %>
+        
+        
+        <% #Student.where(["user_id = ? AND section_id = ?", current_user.id, section.id]) %>
+        
+        <% end %>
+        
+        <% if(@currentUser.userType == "instructor") %>
         
         <div id="show">
         <div id="classes">
@@ -53,7 +55,7 @@
         </div>
         </div>
         
-        
+        <%end%>
 
 <%= link_to "/classrooms/index" do %>
     <div id="returnClass">
