@@ -15,5 +15,5 @@ Then("I should fill the class department field") do
 end
 
 Then("I should click the create button") do
-   click_button("Create Classroom")
+  click_button("Create")
 end
